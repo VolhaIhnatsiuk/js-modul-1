@@ -59,7 +59,7 @@
 // 	const values = Object.values(salaries);
 // 	let sum = 0;
 // 	for (const value of values) {
-// 		sum += value;
+		// sum += value; / sum = sum + value
 // 	}
 // 	return sum;
 // }
@@ -73,21 +73,35 @@
 //Функція вважає, що м повертає загальну вартість каменів
 //з ​​таким ім'ям, ціною та кількістю з об'єкта
 
-const stones = [
-{ name: "Смарагд", price: 1300, quantity: 4 },
-{ name: "Діамант", price: 2700, quantity: 6 },
-{ name: "Сапфір", price: 400, quantity: 7},
-{ name: "Щебінь", price: 150, quantity: 100 },
-];
+// const stones = [
+// { name: "Смарагд", price: 1300, quantity: 4 },
+// { name: "Діамант", price: 2700, quantity: 6 },
+// { name: "Сапфір", price: 400, quantity: 7},
+// { name: "Щебінь", price: 150, quantity: 100 },
+// ];
 
-function calcTotalPrice(items, itemName) {
-    for (const item of items) {
-        if (item.name === itemName) {
-            return item.price * item.quantity;
-        }
-    }
-    return `Stones ${itemName} not fined`
+// function calcTotalPrice(items, itemName) {
+//     for (const item of items) {
+//         if (item.name === itemName) {
+//             return item.price * item.quantity;
+//         }
+//     }
+//     return `Stones ${itemName} not fined`
+// }
+
+// console.log(calcTotalPrice(stones, "Смарагд"))
+
+function calculateTotalPrice(orderedItems) {
+    let totalPrice = 0;
+    // Change code below this line
+
+    // for (let i = 0; i < orderedItems.length; i += 1) {
+    //   totalPrice += orderedItems[i];
+    // }
+    orderedItems.forEach(function (orderedItem, index, orderedItems) {
+        totalPrice += orderedItem[index];
+
+        // Change code above this line
+        return totalPrice;
+    });
 }
-
-console.log(calcTotalPrice(stones, "Смарагд"))
-
